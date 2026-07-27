@@ -1,0 +1,18 @@
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.0
+    container_name: ph-ab-keycloak
+    command:
+      - start-dev
+      - --import-realm
+    environment:
+      # Admin console login (http://localhost:8080)
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: admin
+      KC_HTTP_ENABLED: "true"
+      KC_HOSTNAME_STRICT: "false"
+    ports:
+      - "8080:8080"
+    volumes:
+      # Realm auto-imported on first boot (realm: ph-ab, client: ph-ab-api, user: testuser)
+      - ./docker/keycloak/realm-export.json:/opt/keycloak/data/import/realm-export.json:ro

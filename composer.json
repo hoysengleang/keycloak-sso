@@ -1,0 +1,43 @@
+{
+    "name": "ph-ab/keycloak-sso",
+    "description": "Reusable Keycloak SSO login service for Laravel — password-grant authentication, userinfo, token refresh/logout, pluggable config resolver, and an optional DB-password fallback hook.",
+    "type": "library",
+    "keywords": ["laravel", "keycloak", "sso", "oidc", "authentication", "openid-connect"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PH AB"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0|^12.0",
+        "illuminate/http": "^11.0|^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0|^10.0",
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhAb\\KeycloakSso\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PhAb\\KeycloakSso\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PhAb\\KeycloakSso\\KeycloakSsoServiceProvider"
+            ],
+            "aliases": {
+                "KeycloakSso": "PhAb\\KeycloakSso\\Facades\\KeycloakSso"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
