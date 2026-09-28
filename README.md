@@ -1,4 +1,4 @@
-# ph-ab/keycloak-sso
+# keycloak-sso
 
 A small, reusable **Keycloak SSO login service for Laravel**. Drop it into any
 project to authenticate users against Keycloak with the OpenID Connect
